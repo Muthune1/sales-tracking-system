@@ -89,7 +89,7 @@ def get_gsheet_client():
 @st.cache_data(ttl=60)   # ← refreshes every 60 seconds automatically
 def load_data():
     client = get_gsheet_client()
-    sh     = client.open_by_key(st.secrets["SHEET_ID"])
+    sh = client.open_by_key(st.secrets["app"]["SHEET_ID"])
     all_dfs = []
     for day in DAYS:
         try:
